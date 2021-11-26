@@ -8,8 +8,15 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect,HttpResponse
 
+# For view class
+from django.views.generic import View
+
 def index(request):
     return render(request,'basic_app/index.html')
+
+class CBView(View):
+    def get(self,request):
+        return HttpResponse("Class Based Views!")
 
 
 def registration(request):
