@@ -2,10 +2,13 @@
 
 
 {% block body_block %}
-<h1>Welcome to a list of all the schools!</h1>
-  <ol>
-    {% for school in schools %}
-      <h2><li><a href="{{school.id}}">{{ school.name }}</a></li></h2>
-    {% endfor %}
-  </ol>
+<div class="jumbotron">
+  <h1>Welcome to a list of all the schools!</h1>
+    <ol>
+      {% for school in schools %}
+        <h2><li><a href="{{school.id}}">{{ school.name }}</a></li></h2>
+      {% endfor %}
+    </ol>
+    <a class="btn btn-primary" href="{% url 'basic_app:create' %}">Add School</a>
+</div>
 {% endblock %}

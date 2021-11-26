@@ -4,13 +4,14 @@ from . import models
 
 
 #For login and logout helpers
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect,HttpResponse
 
 # For view class
-from django.views.generic import View,TemplateView, ListView, DetailView
+from django.views.generic import (View,TemplateView, ListView, DetailView,
+                                    CreateView, UpdateView, DeleteView)
 
 def index(request):
     return render(request,'basic_app/index.html')
@@ -32,6 +33,21 @@ class SchoolDetaiView(DetailView):
     model = models.School
     template_name = 'basic_app/school_detail.html'
 
+class SchoolCreateView(CreateView):
+    model = models.School
+    fields = ('name','principal','location')
+    # Automatically searched for school_form.html school is lowercase of model name
+
+class SchoolUpdateView(UpdateView):
+    model = models.School
+    fields = ('name','principal')
+    # Automatically searched for school_form.html
+
+class SchoolDeleteView(DeleteView):
+    # context name covnention school
+    model = models.School
+    success_url = reverse_lazy("basic_app:school_list")
+    # Expects school_confirm_delete.html for templates
 
 def registration(request):
 

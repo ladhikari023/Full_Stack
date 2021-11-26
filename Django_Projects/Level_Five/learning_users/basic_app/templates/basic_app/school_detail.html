@@ -2,7 +2,7 @@
 
 
 {% block body_block %}
-  <div class="jumbotron container">
+  <div class="jumbotron">
     <h1>Welcome to a details of all the schools!</h1>
     <h2>School details:</h2>
     <p>Name: {{school_detail.name}}</p>
@@ -14,5 +14,7 @@
     {% for student in school_detail.students.all %}
       <p>{{student.name}} who is {{student.age}} years old.</p>
     {% endfor %}
+    <p><a class="btn btn-warning" href="{% url 'basic_app:update' pk=school_detail.pk %}">Update</a></p>
+    <p><a class="btn btn-danger" href="{% url 'basic_app:delete' pk=school_detail.pk %}">Delete</a></p>
   </div>
 {% endblock %}
