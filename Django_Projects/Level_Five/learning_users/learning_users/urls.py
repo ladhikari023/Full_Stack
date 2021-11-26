@@ -19,8 +19,10 @@ from basic_app import views
 from django.urls import include
 
 
+
 urlpatterns = [
     path('',views.index,name='index'),
-    path('basic_app/',include('basic_app.urls')),
     path('admin/', admin.site.urls),
+    path('basic_app/', include('basic_app.urls')),
+    path('logout/',views.user_logout,name='logout')
 ]
