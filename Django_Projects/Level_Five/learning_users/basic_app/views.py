@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from basic_app.forms import UserForm,UserProfileInfoForm
+from . import models
 
 
 #For login and logout helpers
@@ -9,14 +10,27 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect,HttpResponse
 
 # For view class
-from django.views.generic import View
+from django.views.generic import View,TemplateView, ListView, DetailView
 
 def index(request):
     return render(request,'basic_app/index.html')
 
-class CBView(View):
-    def get(self,request):
-        return HttpResponse("Class Based Views!")
+class CBView(TemplateView):
+    template_name = 'basic_app/cbv.html'
+
+    def get_context_data(self,**kwargs):
+        context = super().get_context_data(**kwargs)
+        context['injectme'] = 'BASIC INJECTION'
+        return context
+
+class SchoolListView(ListView):
+    context_object_name = 'schools'
+    model = models.School
+
+class SchoolDetaiView(DetailView):
+    context_object_name = 'school_detail'
+    model = models.School
+    template_name = 'basic_app/school_detail.html'
 
 
 def registration(request):
