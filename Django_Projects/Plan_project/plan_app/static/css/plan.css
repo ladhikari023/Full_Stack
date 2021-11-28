@@ -1,0 +1,375 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Russo One', sans-serif; */
+* {
+  box-sizing: border-box;
+  animation: fadeIn 0.5s;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    background: radial-gradient(ellipse farthest-corner at 10vw 95vw, #111 0%, #222 50%, #111 95%);
+}
+.white-text{
+   color: white;
+}
+.black-text{
+    color: black;
+}
+.techfont{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+}
+.bigbrand{
+  font-size: 1.5em;
+}
+
+.white-text{
+  color: white;
+}
+.centerstage{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.meteor {
+  border: 2px solid transparent;
+  border-bottom: 60px solid #fff;
+  position: absolute;
+  transform-origin: top right;
+  animation: shower 0.5s;
+  opacity: 0;
+}
+.meteor:after {
+  content: '';
+  position: absolute;
+  top: 58px;
+  left: 50%;
+  height: 4px;
+  width: 4px;
+  border-radius: 100%;
+  background: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px 0 #fff;
+}
+.star {
+  display: inline-block;
+  border-radius: 100%;
+  background-color: #ff0;
+  position: absolute;
+  opacity: 0.5;
+}
+.star:nth-child(0) {
+  height: 1px;
+  width: 1px;
+  opacity: 0.621165619455339;
+  left: 92vw;
+  top: 58vh;
+}
+.star:nth-child(1) {
+  height: 3px;
+  width: 3px;
+  opacity: 0.839631164183773;
+  left: 0vw;
+  top: 40vh;
+}
+.star:nth-child(2) {
+  height: 4px;
+  width: 4px;
+  opacity: 0.778639951979343;
+  left: 91vw;
+  top: 48vh;
+}
+.star:nth-child(3) {
+  height: 3px;
+  width: 3px;
+  opacity: 0.498548791989128;
+  left: 35vw;
+  top: 27vh;
+}
+.star:nth-child(4) {
+  height: 1px;
+  width: 1px;
+  opacity: 0.246590150101708;
+  left: 51vw;
+  top: 65vh;
+}
+.star:nth-child(5) {
+  height: 4px;
+  width: 4px;
+  opacity: 0.005427219274408;
+  left: 68vw;
+  top: 50vh;
+}
+.star:nth-child(6) {
+  height: 4px;
+  width: 4px;
+  opacity: 0.399099386678728;
+  left: 37vw;
+  top: 46vh;
+}
+.star:nth-child(7) {
+  height: 2px;
+  width: 2px;
+  opacity: 0.482027924200262;
+  left: 16vw;
+  top: 12vh;
+}
+.star:nth-child(8) {
+  height: 2px;
+  width: 2px;
+  opacity: 0.814452018255606;
+  left: 63vw;
+  top: 77vh;
+}
+.star:nth-child(9) {
+  height: 2px;
+  width: 2px;
+  opacity: 0.15814165673734;
+  left: 28vw;
+  top: 23vh;
+}
+.star:nth-child(10) {
+  height: 2px;
+  width: 2px;
+  opacity: 0.936951363421747;
+  left: 72vw;
+  top: 90vh;
+}
+.star:nth-child(11) {
+  height: 1px;
+  width: 1px;
+  opacity: 0.185017219565734;
+  left: 64vw;
+  top: 38vh;
+}
+.star:nth-child(12) {
+  height: 3px;
+  width: 3px;
+  opacity: 0.561059592338955;
+  left: 12vw;
+  top: 32vh;
+}
+.star:nth-child(13) {
+  height: 2px;
+  width: 2px;
+  opacity: 0.116617375711599;
+  left: 15vw;
+  top: 28vh;
+}
+.star:nth-child(14) {
+  height: 3px;
+  width: 3px;
+  opacity: 0.971875540685373;
+  left: 79vw;
+  top: 87vh;
+}
+.star:nth-child(15) {
+  height: 3px;
+  width: 3px;
+  opacity: 0.874235094948819;
+  left: 32vw;
+  top: 5vh;
+}
+.star:nth-child(16) {
+  height: 2px;
+  width: 2px;
+  opacity: 0.16878165228133;
+  left: 92vw;
+  top: 87vh;
+}
+.star:nth-child(17) {
+  height: 4px;
+  width: 4px;
+  opacity: 0.606081712796291;
+  left: 5vw;
+  top: 45vh;
+}
+.star:nth-child(18) {
+  height: 1px;
+  width: 1px;
+  opacity: 0.734734609258436;
+  left: 16vw;
+  top: 3vh;
+}
+.star:nth-child(19) {
+  height: 1px;
+  width: 1px;
+  opacity: 0.592420492737563;
+  left: 19vw;
+  top: 93vh;
+}
+.star:nth-child(20) {
+  height: 4px;
+  width: 4px;
+  opacity: 0.290401133373522;
+  left: 3vw;
+  top: 2vh;
+}
+.meteor:nth-child(0) {
+  left: 62vw;
+  top: 39vh;
+  animation-delay: 6s;
+}
+.meteor:nth-child(1) {
+  left: 32vw;
+  top: 44vh;
+  animation-delay: 4s;
+}
+.meteor:nth-child(2) {
+  left: 73vw;
+  top: 59vh;
+  animation-delay: 8s;
+}
+.meteor:nth-child(3) {
+  left: 64vw;
+  top: 3vh;
+  animation-delay: 11s;
+}
+.meteor:nth-child(4) {
+  left: 96vw;
+  top: 34vh;
+  animation-delay: 11s;
+}
+.meteor:nth-child(5) {
+  left: 12vw;
+  top: 84vh;
+  animation-delay: 4s;
+}
+.meteor:nth-child(6) {
+  left: 44vw;
+  top: 99vh;
+  animation-delay: 7s;
+}
+.meteor:nth-child(7) {
+  left: 19vw;
+  top: 3vh;
+  animation-delay: 14s;
+}
+.meteor:nth-child(8) {
+  left: 4vw;
+  top: 86vh;
+  animation-delay: 11s;
+}
+.meteor:nth-child(9) {
+  left: 54vw;
+  top: 38vh;
+  animation-delay: 15s;
+}
+.meteor:nth-child(10) {
+  left: 79vw;
+  top: 4vh;
+  animation-delay: 9s;
+}
+body:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 30vw;
+  height: 10vh;
+  left: 0;
+  background: #000;
+  z-index: 1;
+  border-radius: 50% 50% 0 0;
+}
+body:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80vw;
+  height: 15vh;
+  background: #000;
+  z-index: 1;
+  border-radius: 50% 50% 0 0;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes shower {
+  0% {
+    transform: rotate(30deg) scaleY(0);
+    opacity: 0;
+  }
+  65% {
+    transform: rotate(30deg) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(30deg) scaleY(1) translateY(500%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes shower {
+  0% {
+    transform: rotate(30deg) scaleY(0);
+    opacity: 0;
+  }
+  65% {
+    transform: rotate(30deg) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(30deg) scaleY(1) translateY(500%);
+    opacity: 0;
+  }
+}
+@-o-keyframes shower {
+  0% {
+    transform: rotate(30deg) scaleY(0);
+    opacity: 0;
+  }
+  65% {
+    transform: rotate(30deg) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(30deg) scaleY(1) translateY(500%);
+    opacity: 0;
+  }
+}
+@keyframes shower {
+  0% {
+    transform: rotate(30deg) scaleY(0);
+    opacity: 0;
+  }
+  65% {
+    transform: rotate(30deg) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(30deg) scaleY(1) translateY(500%);
+    opacity: 0;
+  }
+}

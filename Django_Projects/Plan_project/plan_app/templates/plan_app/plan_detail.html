@@ -1,0 +1,18 @@
+{% extends 'plan_app/base.html' %}
+
+{% block content %}
+
+{% if not plan.published_date %}
+    <a class="btn btn-default" href="{% url 'plan_publish' pk=plan.pk %}">Add to Plan</a>
+{% endif %}
+  <h1>{{plan.title}}</h1>
+  <p>{{plan.text|safe|linebreaks}}</p>
+  {% if user.is_authenticated %}
+      <a class="btn btn-warning" href="{% url 'plan_update' pk=plan.pk %}">EDIT</a>
+      <a class="btn btn-danger" href="{% url 'plan_remove' pk=plan.pk %}">DELETE</a>
+  <p>Comments:</p>
+  {% for comments in plan.comments.all %}
+
+  {% endfor %}
+  {% endif %}
+{% endblock %}

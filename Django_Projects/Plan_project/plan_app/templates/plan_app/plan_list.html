@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'plan_app/base.html' %}
+
+{% block content %}
+<div class="centerstage">
+  {% if user.is_authenticated %}
+  <h1>All Plans of {{user.username}}:</h1>
+  <div class="jumbotron black-text">
+    {% for plan in user.plans.all %}
+      <a class="black-text" href="{% url 'plan_detail' pk=plan.pk %}"><h3>{{plan.title}}</h3></a>
+      <p>Published On: {{plan.published_date|date:"D M Y"}}</p>
+    {% endfor %}
+    {% else %}
+        <h1>Login to make plans!😊</h1>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

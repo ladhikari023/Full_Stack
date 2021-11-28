@@ -1,0 +1,15 @@
+{% extends 'plan_app/base.html' %}
+
+{% block content %}
+<div class="jumbotron container black-text">
+  {% if registered %}
+    <h1>Thank you for Registering!</h1>
+  {% else %}
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        <input type="submit" name="" value="Register">
+    </form>
+  {% endif %}
+</div>
+{% endblock %}

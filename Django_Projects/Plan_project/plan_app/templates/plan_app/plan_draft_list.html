@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'plan_app/base.html' %}
+
+{% block content %}
+  <h1>All Drafts of {{user.username}}</h1>
+  {% for plan in plan_list %}
+    <a class="white-text" href="{% url 'plan_detail' pk=plan.pk %}"><h3>{{plan.title}}</h3></a>
+    {% if plan.published_date %}
+      <p>Published On: {{plan.published_date|date:"D M Y"}}</p>
+    {% else %}
+      <p>Not Published yet!</p>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

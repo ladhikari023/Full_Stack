@@ -1,0 +1,13 @@
+{% extends 'plan_app/base.html' %}
+
+{% block content %}
+  <h1>Create Plan for {{user.username}}</h1>
+
+  <form class="post-form" method="POST">
+      {{form.as_p}}
+      {% csrf_token %}
+      <input class="black-text" type="submit" name="" value="Add Plan">
+  </form>
+
+  <script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}
