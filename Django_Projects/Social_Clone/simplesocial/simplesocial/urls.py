@@ -18,12 +18,14 @@ from django.urls import path,include
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',views.HomePage.as_view(),name='home'),
+    path('admin/', admin.site.urls),
     # Important to note the order of the url can impact logout view!
     # Better Idea to call it above accounts.urls
     path('test/',views.TestPage.as_view(),name='test'),
     path('thanks/',views.ThanksPage.as_view(),name='thanks'),
     path('accounts/', include('accounts.urls',namespace='accounts')),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('groups/', include('groups.urls',namespace='groups')),
+    path('posts/', include('posts.urls',namespace='posts')),
 ]

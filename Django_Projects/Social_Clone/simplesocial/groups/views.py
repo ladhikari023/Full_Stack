@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from . import models
 # Create your views here.
 
 from groups.models import Group,GroupMember
@@ -21,7 +22,7 @@ class ListGroups(generic.ListView):
 class JoinGroup(LoginRequiredMixin,generic.RedirectView):
 
     def get_redirect_url(self,*args,**kwargs):
-        return reverse{'groups','single',kwargs={'slug':self.kwargs.get('slug')}}
+        return reverse("groups:single",kwargs={'slug':self.kwargs.get('slug')})
 
     def get(self,request,*args,**kwargs):
         group = get_object_or_404(Group,slug=self.kwargs.get('slug'))
@@ -30,7 +31,7 @@ class JoinGroup(LoginRequiredMixin,generic.RedirectView):
         try:
             GroupMember.objects.create(user=self.request.user,group=group)
         except IntegrityError:
-            messages.warning(self.request=,'Warning already a member')
+            messages.warning(self.request,'Warning already a member')
         else:
             messages.success(self.request,'You are now a member!')
         return super().get(request,*args,**kwargs)
@@ -39,16 +40,16 @@ class JoinGroup(LoginRequiredMixin,generic.RedirectView):
 class LeaveGroup(LoginRequiredMixin,generic.RedirectView):
 
     def get_redirect_url(self,*args,**kwargs):
-        return reverse{'groups','single',kwargs={'slug':self.kwargs.get('slug')}}
+        return reverse("groups:single",kwargs={'slug':self.kwargs.get('slug')})
 
     def get(self,request,*args,**kwargs):
 
         try:
             membership = models.GroupMember.objects.filter(
                 user = self.request.user,
-                group_slug = self.kwargs.get('slug')
+                group__slug = self.kwargs.get('slug')
             ).get()
-        except models.GroupMemner.DoesNotExist:
+        except models.GroupMember.DoesNotExist:
             messages.warning(self.request,'Sorry you are not in the group')
         else:
             membership.delete()
